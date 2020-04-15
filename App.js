@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 
 // Get screen dimensions
-const { width } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
         <Text style={styles.title}>New Neighboor</Text>
       </View>
       <View style={styles.card}>
-        <Image source={require('./pictures/image.png')} />
+        <Image source={require('./pictures/image.png')} style={{height:150, width:150, borderRadius:150/2}}/>
         <TextInput style={styles.input} placeholder="Emma" />
         <TextInput style={styles.input} placeholder="Phone Number" />
         <TextInput style={styles.input} placeholder="Address" />
@@ -45,21 +45,21 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
     flex: 1,
-    width: width - 40,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    width: width - 20,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
     alignContent: "center"
   },
 
   input: {
-    padding: 20,
+    width: width - 50,
+    height: 50,
+    marginTop: 40,
+    borderWidth: 1,
+    padding: 10,
     borderBottomColor: '#bbb',
     borderBottomWidth: 2,
-    fontSize: 24
-  },
-
-  Image: {
-    borderRadius: 150
+    fontSize: 22
   }
 
 });
